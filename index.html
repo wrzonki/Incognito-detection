@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Analiza ruchu i identyfikacja użytkownika w trybie incognito. Paweł Wrzosek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div id='uniqId'></div>
+    </div>
+    <script src="incoguto.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133359505-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-133359505-1');
+    </script>
+    <script>
+        window.gtag('config', 'UA-133359505-1', {
+            'send_page_view': true,
+            'custom_map': {
+                'dimension1': 'uniqId'
+            }
+        });
+    </script>
+    <script>
+        window.gtag('event', 'incoguto', {
+            'uniqId': window.uid
+        });
+    </script>
+</body>
+
+</html>

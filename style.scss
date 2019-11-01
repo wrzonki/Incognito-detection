@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    margin-top: 20vh;
+    text-align: center;
+}
+
+#uniqId {
+    :before {
+        content: "Unikalne ID: "
+    }
+}
